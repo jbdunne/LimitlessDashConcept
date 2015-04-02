@@ -1,0 +1,315 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-weight:100;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:black;
+ 
+
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-weight:100;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+/** Simple Tabs 
+
+Copyright (c) 2013, Peter McKay
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE. 
+
+**/
+
+.navbar {/* properties for the entire navigation area */
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  }
+
+.navbar li {/* properties for the individual navigation tabs */
+  display: inline-block;
+  margin-right:8.5%;
+  margin-left:8.5%;
+  padding-top:6%;
+  padding-bottom:5%;
+  border: 1px black solid;
+  border-bottom: none;
+  background-color: black;
+  }
+
+  .navbar img {/* properties for the individual navigation tabs */
+ height:50px;
+  }
+  
+#activetab {/* properties to visually set off the "active" tab, meaning the current page's tab */
+  background-color: black;
+  }
+
+.pagecontent {/* optional properties to keep content area consistent with navbar, or to differentiate it as needed */
+  }
+
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:35px;
+    font-weight:normal;
+    margin:0px;
+    margin-bottom:.5em;
+    overflow:visible;
+    padding:0px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    text-decoration: underline;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+}
+h2 {
+    font-size:25px;
+    font-weight:normal;
+    margin:0px;
+    margin-bottom:.5em;
+    overflow:visible;
+    padding:0px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:black;
+    display:block;
+}
+
+.event.received {
+    background-color:black;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+/* extra css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family:'Helvetica Neue',Helvetica, Arial, serif;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+}
+
+
+a {
+    font-family:'Helvetica Neue',Helvetica, Arial, serif;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+
+}
+#audio, #navigation, #discovery, #phone {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color:gray;
+    margin-bottom:75px;
+    height:75px;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size:28px;
+}
+#footer1 {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color:gray;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size:28px;
+  height:75px;
+}
+
+#musicimg {
+  width:100%;
+}
+#map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+
+button, select {
+  background: transparent;
+  color:gray;
+  background-color:black;
+  border-width:2px;
+  border-color:gray;
+  border-style:solid;
+  font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size:26px;
+  margin:10px;
+  width:40%;
+  height:100px;
+  margin-left:30%;
+  margin-right:30%;
+  text-align:center;
+  -webkit-appearance: none;
+}
+
+#col1, #col2, #col3 img {height:100%;}
+#col1 { width: 33.3333%; float:left; background-color: gray; }
+#col2 { width: 33.3333%; float:left; background-color: black;}
+#col3 { width: 33.3333%; float:right; background-color: gray;}
+#hvac {margin-left:20%;margin-right:20%;padding-top:10px;}
+#hvactext {margin-left:20%;margin-right:20%;padding-top:10px;}
+#hvac {margin-left:18%;margin-right:18%;padding-top:10px;}
+#hvacseat {margin-left:10%;margin-right:10%;padding-top:10px;}
+
+#tooltip {
+  position: absolute;
+  width: 95px;
+  height: auto;
+  padding: 10px;
+  background-color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+#tooltip.hidden {
+  display: none;
+}
+#tooltip p {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+}
+.indent{
+  padding-left: 5px;
+}
+.heading{
+  font-weight: bold;
+}
+#keyword{
+  color: red;
+  font-style: italic;
+}
+rect {
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+rect:hover{
+  fill: orange;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+}

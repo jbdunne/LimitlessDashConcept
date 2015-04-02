@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+ <script>
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(40.749287, -73.989544)
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+
+  <ul class="navbar">
+    <a href="index.html"><li><img src="img/music.png"></li></a>
+    <a href="nav.html"><li><img src="img/navigation.png"></li></a>
+    <a href="discovery.html"><li id="activetab"><img src="img/discovery.png"></li></a>
+    <a href="phone.html"><li><img src="img/phone.png"></li></a>
+  </ul>
+<div class="pagecontent">
+  <h1> Welcome to CVS.</h1>
+
+  <h2>For patient</h2> <select>
+  <option value="volvo">Sara</option>
+  <option value="saab">Sandra</option>
+  <option value="opel">Jon</option>
+</select>
+<h2>We have 3 prescriptions on file:</h2>
+<button type="button" value="button name">Lipitor</button> </br>
+  <button type="button">Nexium</button> </br>
+  <button type="button">Plavix</button> </br>
+  </div>
+
+ </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <div id="footer">
+            <div id="col1"><div id="hvactext">73°F&nbsp;<img id="hvacseat" src="img/seat.png"></div></div>
+            <div id="col2"><img id="hvac" src="img/snowflake.png"><img id="hvac" src="img/defrostw.png"></div>
+            <div id="col3"><div id="hvactext"><img id="hvacseat" src="img/seat.png">&nbsp;70°F</div></div>
+        </div>
+        <div id="footer1">
+            <div id="col2"><div id="hvactext">&nbsp;</div></div>
+            <div id="col2"><img id="hvac" src="img/cycle.png"><img id="hvac" src="img/defrostr.png"></div>
+            <div id="col2"><div id="hvactext">&nbsp;</div></div>
+        </div>
+
+</body>
+</html>
